@@ -1,0 +1,77 @@
+date: 2026-10-23T00:29:52+01:00
+host: gc008.pri.cosma.local
+mode: marker  binary: $HOME/dine-task2/install/spr/gridbench-likwid/bin/Benchmark_Grid
+cores (socket 0 first): 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63
+threads: 64  maxL: 32  groups: FLOPS_SP
+flags: --no-benchmark-flops-fp64 --no-benchmark-flops-sp4-2as --no-benchmark-flops-sp4-f
+       --no-benchmark-flops-su4 --mpi 1.1.1.1 --max-L 32 --no-benchmark-memory --no-benchmark-su4 --no-benchmark-comms --no-check-wilson 
+likwid-perfctr -- Version 5.5.1 (commit: 0123456789)
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Gold 6430
+CPU type:	Intel SapphireRapids processor
+CPU stepping:	8
+********************************************************************************
+Hardware Thread Topology
+********************************************************************************
+Sockets:		2
+CPU dies:		2
+Cores per socket:	32
+Threads per core:	2
+--------------------------------------------------------------------------------
+HWThread        Thread        Core        Die        Socket        Available
+0               0             0           0          0             *                
+1               0             32          0          1             *                
+2               0             1           0          0             *                
+3               0             33          0          1             *                
+4               0             2           0          0             *                
+5               0             34          0          1             *                
+6               0             3           0          0             *                
+7               0             35          0          1             *                
+8               0             4           0          0             *                
+9               0             36          0          1             *                
+10              0             5           0          0             *                
+11              0             37          0          1             *                
+12              0             6           0          0             *                
+13              0             38          0          1             *                
+14              0             7           0          0             *                
+15              0             39          0          1             *                
+16              0             8           0          0             *                
+17              0             40          0          1             *                
+18              0             9           0          0             *                
+19              0             41          0          1             *                
+20              0             10          0          0             *                
+21              0             42          0          1             *                
+22              0             11          0          0             *                
+23              0             43          0          1             *                
+24              0             12          0          0             *                
+25              0             44          0          1             *                
+26              0             13          0          0             *                
+Group name	Description
+--------------------------------------------------------------------------------
+   BRANCH	Branch prediction miss rate/ratio
+    CLOCK	Power and Energy consumption
+     DATA	Load to store ratio
+  DDR_HBM	Memory bandwidth in MBytes/s for DDR and HBM
+   DIVIDE	Divide unit information
+   ENERGY	Power and Energy consumption
+FLOPS_AVX	Packed AVX MFLOP/s
+ FLOPS_DP	Double Precision MFLOP/s
+ FLOPS_HP	Half Precision MFLOP/s
+ FLOPS_SP	Single Precision MFLOP/s
+      HBM	HBM bandwidth in MBytes/s
+   HBM_DP	Overview of DP arithmetic and main memory performance
+   HBM_HP	Overview of HP arithmetic and main memory performance
+   HBM_SP	Overview of SP arithmetic and main memory performance
+       L2	L2 cache bandwidth in MBytes/s
+  L2CACHE	L2 cache miss rate/ratio
+       L3	L3 cache bandwidth in MBytes/s
+  L3CACHE	L3 cache miss rate/ratio
+      MEM	Memory bandwidth in MBytes/s
+   MEM_DP	Overview of DP arithmetic and main memory performance
+   MEM_HP	Overview of HP arithmetic and main memory performance
+   MEM_SP	Overview of SP arithmetic and main memory performance
+  SPECI2M	Memory bandwidth in MBytes/s including SpecI2M
+ TLB_DATA	L1 data TLB miss rate/ratio
+TLB_INSTR	L1 Instruction TLB miss rate/ratio
+      TMA	Top down cycle allocation
+      UPI	UPI data traffic

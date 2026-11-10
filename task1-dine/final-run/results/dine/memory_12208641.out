@@ -1,0 +1,48 @@
+====
+Starting job 12208641 at Thu Oct 22 23:40:21 BST 2026 for user user.
+Running on nodes: b105
+====
+NOTE: SMT is on (2 threads/core); benchmarks use 32 threads, one per physical core
+CPU: AMD EPYC 7302 16-Core Processor, 2 sockets x 16 cores, 2 threads/core
+pinning: -W S0:...:16:1:2 -> hwthreads [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], one per physical core
+load_avx                 N:4GB:32         median=    219144.1 min=218870.8 max=219270.2
+load_avx                 S0:2GB:16        median=    109784.8 min=109448.3 max=109824.4
+copy_avx                 N:4GB:32         median=    156336.6 min=156140.1 max=156516.4
+copy_avx                 S0:2GB:16        median=     78161.4 min=77866.8 max=78230.1
+stream_avx               N:4GB:32         median=    171473.3 min=171155.4 max=171707.6
+stream_avx               S0:2GB:16        median=     85935.9 min=85617.1 max=85972.4
+triad_avx                N:4GB:32         median=    179775.0 min=179488.1 max=180276.4
+triad_avx                S0:2GB:16        median=     90039.8 min=90009.3 max=90286.2
+copy_mem_avx             N:4GB:32         median=    238910.4 min=238389.9 max=239373.7
+copy_mem_avx             S0:2GB:16        median=    119371.3 min=119301.4 max=119592.5
+stream_mem_avx           N:4GB:32         median=    233982.3 min=233635.8 max=234040.6
+stream_mem_avx           S0:2GB:16        median=    116857.8 min=116540.4 max=117245.6
+triad_mem_avx            N:4GB:32         median=    230681.3 min=230325.0 max=230909.9
+triad_mem_avx            S0:2GB:16        median=    115504.7 min=115383.0 max=115567.6
+STREAM best MB/s: Copy=243485.5, Scale=158435.4, Add=171419.8, Triad=172308.9
+load_avx                 N:256kB:32       median=   5547202.5 min=5545969.6 max=5548956.4
+load_avx                 N:512kB:32       median=   5890312.8 min=5866923.8 max=6087814.2
+load_avx                 N:1MB:32         median=   5745453.5 min=5697197.4 max=5786166.0
+load_avx                 N:4MB:32         median=   3303503.4 min=3128453.3 max=3304192.1
+load_avx                 N:8MB:32         median=   3145478.1 min=2803884.3 max=3247413.6
+load_avx                 N:16MB:32        median=   2573400.4 min=2434801.9 max=2711950.0
+load_avx                 N:32MB:32        median=   2241539.8 min=2238138.9 max=2245250.1
+load_avx                 N:64MB:32        median=   2215956.5 min=2206265.0 max=2230048.5
+load_avx                 N:128MB:32       median=   2214362.0 min=2207238.4 max=2226562.4
+load_avx                 N:256MB:32       median=   1585821.8 min=1556135.6 max=1608856.8
+load_avx                 N:512MB:32       median=    220995.6 min=220122.8 max=222235.2
+load_avx                 N:1GB:32         median=    217802.9 min=216934.0 max=218356.8
+load_avx                 N:4GB:32         median=    218104.6 min=217714.9 max=218399.1
+triad_avx                N:256kB:32       median=   5699755.8 min=5530851.8 max=5701110.7
+triad_avx                N:512kB:32       median=   6165288.2 min=6101538.1 max=6175533.8
+triad_avx                N:1MB:32         median=   3766257.0 min=3672154.4 max=3818377.8
+triad_avx                N:4MB:32         median=   3056013.7 min=3037596.0 max=3093405.2
+triad_avx                N:8MB:32         median=   3036117.9 min=2708086.4 max=3091764.8
+triad_avx                N:16MB:32        median=   2793162.6 min=2754417.9 max=2840091.6
+triad_avx                N:32MB:32        median=   2337417.0 min=2322209.3 max=2362707.7
+triad_avx                N:64MB:32        median=   2290900.0 min=2257064.4 max=2306035.2
+triad_avx                N:128MB:32       median=   2262765.0 min=2234046.4 max=2276279.2
+triad_avx                N:256MB:32       median=   1610371.6 min=1606287.4 max=1616791.0
+triad_avx                N:512MB:32       median=    182703.0 min=182180.9 max=183164.5
+triad_avx                N:1GB:32         median=    179051.0 min=178769.0 max=179311.1
+triad_avx                N:4GB:32         median=    179754.3 min=179260.2 max=180097.8

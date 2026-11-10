@@ -7,13 +7,19 @@
 #SBATCH -e memory_%j.err
 
 # DRAM bandwidth + cache-level sweep. Partition/account are given at submit time:
-#   Dine   : sbatch -p bluefield1 -A do009 job_memory.sh zen2
+#   Dine   : sbatch -p bluefield1 -A <account> job_memory.sh zen2
 #   Dine-2 : sbatch -p dine2 -A <account> job_memory.sh spr
 ARCH=${1:?usage: sbatch -p <partition> -A <account> job_memory.sh zen2|spr}
 
-module load likwid 2>/dev/null || echo "no likwid module; assuming likwid is on PATH"
-module load gcc 2>/dev/null || echo "no gcc module; assuming gcc is on PATH"
-module load python   # TODO: pin the exact version, e.g. python/3.x.y (needs >= 3.7)
+# Order matters: likwid aborts unless a compiler module is loaded first, and a bare `module load likwid`
+# picks likwid/master_020426, so pin the version. gnu_comp also provides gcc for STREAM.
+# Purge first so the job doesn't inherit login-shell modules.
+module purge
+module load cosma/2024                  # COSMA default base module (removed by purge)
+module load gnu_comp/14.1.0
+module load likwid/5.5.1
+command -v likwid-bench >/dev/null || { echo "ERROR: likwid-bench not on PATH after module load"; exit 1; }
+module load python/3.13.6 || echo "python/3.13.6 module failed; using system python3"
 
 # Reference STREAM, built here so -march=native matches the compute node. 400M doubles = 3.2 GB/array,
 # far beyond the L3 of either node (rule of thumb: arrays >= 4x total cache). -mcmodel=medium is

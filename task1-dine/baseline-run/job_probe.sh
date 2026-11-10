@@ -6,9 +6,6 @@
 #SBATCH -o probe_%j.out
 #SBATCH -e probe_%j.err
 
-# Quick hardware probe to fill in/verify ARCHS in bench.py and the figures in theoretical_peaks.md.
-#   Dine   : sbatch -p bluefield1 -A do009 job_probe.sh
-#   Dine-2 : sbatch -p dine2 -A <account> job_probe.sh
 module load likwid 2>/dev/null || echo "no likwid module; assuming likwid is on PATH"
 
 set -x

@@ -1,0 +1,15 @@
+arch,ceiling,measured,unit,spec,measured/spec
+zen2,DP,1670.8,GFLOP/s,1536.0,1.09
+zen2,SP,3340.2,GFLOP/s,3072.0,1.09
+zen2,DRAM,219.1,GB/s,409.6,0.54
+zen2,L1,5890.3,GB/s,,
+zen2,L2,3303.5,GB/s,,
+zen2,L3,2241.5,GB/s,,
+zen2,ridge DP (FLOP/B),7.62,,3.75,
+spr,DP,4649.1,GFLOP/s,4300.8,1.08
+spr,SP,9291.4,GFLOP/s,8601.6,1.08
+spr,DRAM,433.3,GB/s,563.2,0.77
+spr,L1,19234.5,GB/s,,
+spr,L2,8243.4,GB/s,,
+spr,L3,1371.6,GB/s,,
+spr,ridge DP (FLOP/B),10.73,,7.64,

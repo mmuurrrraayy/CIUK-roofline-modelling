@@ -1,0 +1,19 @@
+====
+Starting job 12208640 at Thu Oct 22 23:40:21 BST 2026 for user user.
+Running on nodes: b102
+====
+NOTE: SMT is on (2 threads/core); benchmarks use 32 threads, one per physical core
+CPU: AMD EPYC 7302 16-Core Processor, 2 sockets x 16 cores, 2 threads/core
+pinning: -W S0:...:16:1:2 -> hwthreads [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], one per physical core
+peakflops_avx_fma        S0:16kB:1        median=     52396.6 min=52372.5 max=52416.8
+peakflops_avx_fma        S0:32kB:2        median=    104792.8 min=104757.1 max=104824.5
+peakflops_avx_fma        S0:64kB:4        median=    209495.9 min=209459.7 max=209561.1
+peakflops_avx_fma        S0:128kB:8       median=    418997.2 min=418738.9 max=419055.0
+peakflops_avx_fma        S0:256kB:16      median=    836781.3 min=835626.0 max=837207.4
+peakflops_avx_fma        N:512kB:32       median=   1670814.6 min=1669161.1 max=1671955.2
+peakflops_sp_avx_fma     S0:16kB:1        median=    104780.4 min=104750.3 max=104796.4
+peakflops_sp_avx_fma     S0:32kB:2        median=    209625.1 min=209555.0 max=209657.0
+peakflops_sp_avx_fma     S0:64kB:4        median=    419066.3 min=418953.4 max=419118.7
+peakflops_sp_avx_fma     S0:128kB:8       median=    837689.3 min=837359.8 max=837815.0
+peakflops_sp_avx_fma     S0:256kB:16      median=   1673714.4 min=1671392.4 max=1673863.4
+peakflops_sp_avx_fma     N:512kB:32       median=   3340239.1 min=3338302.2 max=3346273.2

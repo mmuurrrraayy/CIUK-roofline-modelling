@@ -1,0 +1,67 @@
+{
+  "flops": {
+    "comparison_point_Gflops": 35.77066726869188,
+    "results": [
+      {
+        "Gflops_dwf4": 65.42902873080519,
+        "Gflops_staggered": 32.549413363659056,
+        "Gflops_wilson": 69.63448694596237,
+        "L": 8,
+        "Precision": "FP32"
+      },
+      {
+        "Gflops_dwf4": 60.535482100565254,
+        "Gflops_staggered": 26.297714113710008,
+        "Gflops_wilson": 42.022545371202476,
+        "L": 12,
+        "Precision": "FP32"
+      },
+      {
+        "Gflops_dwf4": 40.39932411234706,
+        "Gflops_staggered": 25.352503375641373,
+        "Gflops_wilson": 36.59227377947352,
+        "L": 16,
+        "Precision": "FP32"
+      },
+      {
+        "Gflops_dwf4": 37.275266745144975,
+        "Gflops_staggered": 13.096801794596123,
+        "Gflops_wilson": 22.039961351831785,
+        "L": 24,
+        "Precision": "FP32"
+      },
+      {
+        "Gflops_dwf4": 34.266067792238786,
+        "Gflops_staggered": 12.73441338268614,
+        "Gflops_wilson": 19.363046694405664,
+        "L": 32,
+        "Precision": "FP32"
+      }
+    ]
+  },
+  "geometry": {
+    "mpi": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "nodes": 1,
+    "pattern": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "ranks": 1,
+    "shm": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "hostnames": [
+    "gc004.pri.cosma.local"
+  ]
+}

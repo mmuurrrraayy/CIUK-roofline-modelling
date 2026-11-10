@@ -1,0 +1,75 @@
+diff --git a/Benchmark-Grid/benchmarks/DeoFlops.hpp b/Benchmark-Grid/benchmarks/DeoFlops.hpp
+index 535f865..7eb42a6 100644
+--- a/Benchmark-Grid/benchmarks/DeoFlops.hpp
++++ b/Benchmark-Grid/benchmarks/DeoFlops.hpp
+@@ -5,6 +5,9 @@
+ #include "Common.hpp"
+ #include "Benchmark-Grid/ActionInfo.hpp"
+ #include "Benchmark-Grid/Utils.hpp"
++#ifdef LIKWID_PERFMON
++#include <likwid-marker.h>
++#endif
+ 
+ 
+ using namespace Grid;
+@@ -257,6 +260,16 @@ namespace Benchmark
+ 
+         time_statistics timestat;
+         std::vector<double> t_time(ncall);
++#ifdef LIKWID_PERFMON
++        // One region per (action, group, precision, L), e.g. dwf_SU3_SINGLE_L32. Started/stopped in
++        // every OpenMP thread so per-core and per-socket (uncore) counters are all read; the 4 kernel
++        // cases accumulate into the same region (likwid reports count = 4).
++        std::string region = std::string(Ls > 1 ? "dwf" : (Ls == 1 ? "wilson" : "staggered")) + "_" +
++                             groupFamily + std::to_string(Nc) + "_" + actionPrec<Action>() + "_L" +
++                             std::to_string(L);
++#pragma omp parallel
++        LIKWID_MARKER_START(region.c_str());
++#endif
+         for (uint64_t i = 0; i < ncall; i++)
+         {
+           t0 = usecond();
+@@ -264,6 +277,10 @@ namespace Benchmark
+           t1 = usecond();
+           t_time[i] = t1 - t0;
+         }
++#ifdef LIKWID_PERFMON
++#pragma omp parallel
++        LIKWID_MARKER_STOP(region.c_str());
++#endif
+         action.FermionGrid()->Barrier();
+ 
+         double volume = Ls > 0? Ls : 1;
+diff --git a/Benchmark-Grid/main.cpp b/Benchmark-Grid/main.cpp
+index 853e5a2..428fe13 100644
+--- a/Benchmark-Grid/main.cpp
++++ b/Benchmark-Grid/main.cpp
+@@ -26,6 +26,9 @@
+ #include "Benchmark-Grid/benchmarks/Benchmarks.hpp"
+ #include "Benchmark-Grid/Utils.hpp"
+ #include "Benchmark-Grid/checks/Checks.hpp"
++#ifdef LIKWID_PERFMON
++#include <likwid-marker.h>
++#endif
+ 
+ 
+ using namespace Grid;
+@@ -180,6 +183,9 @@ int main(int argc, char **argv)
+     }
+   }
+   Grid_init(&argc, &argv);
++#ifdef LIKWID_PERFMON
++  LIKWID_MARKER_INIT;
++#endif
+ 
+   bool do_su4 = true;
+   bool do_memory = true;
+@@ -554,5 +560,8 @@ int main(int argc, char **argv)
+     }
+   }
+ 
++#ifdef LIKWID_PERFMON
++  LIKWID_MARKER_CLOSE;
++#endif
+   Grid_finalize();
+ }

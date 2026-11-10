@@ -1,0 +1,50 @@
+====
+Starting job 12199891 at Wed Oct 21 23:53:07 BST 2026 for user user.
+Running on nodes: gc003
+====
+NOTE: SMT is on (2 threads/core); benchmarks use 64 threads, one per physical core
+CPU: Intel(R) Xeon(R) Gold 6430, 2 sockets x 32 cores, 2 threads/core
+pinning: -W S0:...:32:1:2 -> hwthreads [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62], one per physical core
+load_avx512              N:8GB:64         median=    433282.8 min=433146.5 max=433298.7
+load_avx512              S0:4GB:32        median=    216892.8 min=216832.9 max=216967.8
+copy_avx512              N:8GB:64         median=    317776.4 min=317711.0 max=317974.1
+copy_avx512              S0:4GB:32        median=    160710.6 min=160643.8 max=160741.9
+stream_avx512            N:8GB:64         median=    354548.7 min=354466.0 max=354697.3
+stream_avx512            S0:4GB:32        median=    178785.6 min=178765.6 max=178847.1
+triad_avx512             N:8GB:64         median=    377141.8 min=377068.1 max=377244.9
+triad_avx512             S0:4GB:32        median=    189774.1 min=189680.2 max=189817.7
+copy_mem_avx512          N:8GB:64         median=    359660.6 min=359652.2 max=359687.4
+copy_mem_avx512          S0:4GB:32        median=    186382.4 min=186211.6 max=186388.3
+stream_mem_avx512        N:8GB:64         median=    368858.2 min=368706.2 max=368894.7
+stream_mem_avx512        S0:4GB:32        median=    185799.7 min=185772.2 max=185871.1
+triad_mem_avx512         N:8GB:64         median=    385924.2 min=385701.0 max=385988.7
+triad_mem_avx512         S0:4GB:32        median=    193998.6 min=193965.4 max=194114.9
+STREAM best MB/s: Copy=339272.1, Scale=326667.1, Add=365032.9, Triad=366665.0
+load_avx512              N:1MB:64         median=  18182372.8 min=18174801.5 max=18211090.4
+load_avx512              N:2MB:64         median=  19234513.9 min=19229339.5 max=19242551.3
+load_avx512              N:8MB:64         median=   8204970.5 min=8200316.8 max=8217578.5
+load_avx512              N:32MB:64        median=   8228818.2 min=8216533.7 max=8234642.1
+load_avx512              N:64MB:64        median=   8243389.1 min=8179985.8 max=8247000.1
+load_avx512              N:96MB:64        median=   6682919.8 min=5012611.2 max=8218231.8
+load_avx512              N:128MB:64       median=   4515733.0 min=4426727.8 max=4607897.6
+load_avx512              N:160MB:64       median=   1371566.2 min=1356883.1 max=1378135.8
+load_avx512              N:192MB:64       median=    925582.2 min=922296.9 max=927761.9
+load_avx512              N:256MB:64       median=    814568.0 min=810297.4 max=836745.1
+load_avx512              N:512MB:64       median=    591370.3 min=584989.1 max=595496.5
+load_avx512              N:1GB:64         median=    468245.5 min=462295.1 max=469961.4
+load_avx512              N:4GB:64         median=    434882.8 min=434318.8 max=434987.1
+load_avx512              N:8GB:64         median=    433183.0 min=433167.6 max=433263.6
+triad_avx512             N:1MB:64         median=  12655771.7 min=12484451.0 max=13574419.0
+triad_avx512             N:2MB:64         median=  16844939.2 min=16483221.6 max=16961908.7
+triad_avx512             N:8MB:64         median=   5904620.3 min=5815618.2 max=5929846.2
+triad_avx512             N:32MB:64        median=   6002812.7 min=6001648.1 max=6003501.5
+triad_avx512             N:64MB:64        median=   5542360.4 min=5485810.4 max=5571070.6
+triad_avx512             N:96MB:64        median=   5028138.0 min=4675454.6 max=5110346.8
+triad_avx512             N:128MB:64       median=   3363499.2 min=2921052.9 max=3554920.2
+triad_avx512             N:160MB:64       median=   1469247.9 min=1463592.3 max=1470641.0
+triad_avx512             N:192MB:64       median=    998399.6 min=995638.6 max=1007646.1
+triad_avx512             N:256MB:64       median=    752467.9 min=741753.3 max=759201.3
+triad_avx512             N:512MB:64       median=    476765.6 min=476138.3 max=477966.1
+triad_avx512             N:1GB:64         median=    404605.1 min=403946.2 max=404851.5
+triad_avx512             N:4GB:64         median=    379051.5 min=378985.1 max=379256.0
+triad_avx512             N:8GB:64         median=    377025.6 min=376966.3 max=377099.1

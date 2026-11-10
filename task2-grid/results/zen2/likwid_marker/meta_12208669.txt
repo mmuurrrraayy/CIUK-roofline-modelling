@@ -1,0 +1,67 @@
+date: 2026-10-23T00:19:38+01:00
+host: b106.pri.cosma.local
+mode: marker  binary: $HOME/dine-task2/install/zen2/gridbench-likwid/bin/Benchmark_Grid
+cores (socket 0 first): 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+threads: 16  maxL: 32  groups: FLOPS_SP
+flags: --no-benchmark-flops-fp64 --no-benchmark-flops-sp4-2as --no-benchmark-flops-sp4-f
+       --no-benchmark-flops-su4 --mpi 1.1.1.1 --max-L 32 --no-benchmark-memory --no-benchmark-su4 --no-benchmark-comms --no-check-wilson 
+likwid-perfctr -- Version 5.5.1 (commit: 0123456789)
+--------------------------------------------------------------------------------
+CPU name:	AMD EPYC 7302 16-Core Processor                
+CPU type:	AMD K17 (Zen2) architecture
+CPU stepping:	0
+********************************************************************************
+Hardware Thread Topology
+********************************************************************************
+Sockets:		2
+CPU dies:		2
+Cores per socket:	16
+Threads per core:	2
+--------------------------------------------------------------------------------
+HWThread        Thread        Core        Die        Socket        Available
+0               0             0           0          0             *                
+1               0             1           0          0             *                
+2               0             2           0          0             *                
+3               0             3           0          0             *                
+4               0             4           0          0             *                
+5               0             5           0          0             *                
+6               0             6           0          0             *                
+7               0             7           0          0             *                
+8               0             8           0          0             *                
+9               0             9           0          0             *                
+10              0             10          0          0             *                
+11              0             11          0          0             *                
+12              0             12          0          0             *                
+13              0             13          0          0             *                
+14              0             14          0          0             *                
+15              0             15          0          0             *                
+16              0             16          0          1             *                
+17              0             17          0          1             *                
+18              0             18          0          1             *                
+19              0             19          0          1             *                
+20              0             20          0          1             *                
+21              0             21          0          1             *                
+22              0             22          0          1             *                
+23              0             23          0          1             *                
+24              0             24          0          1             *                
+25              0             25          0          1             *                
+26              0             26          0          1             *                
+Group name	Description
+--------------------------------------------------------------------------------
+  BRANCH	Branch prediction miss rate/ratio
+   CACHE	Data cache miss rate/ratio
+   CLOCK	Cycles per instruction
+     CPI	Cycles per instruction
+    DATA	Load to store ratio
+  DIVIDE	Divide unit information
+  ENERGY	Power and Energy consumption
+FLOPS_DP	Double Precision MFLOP/s
+FLOPS_SP	Single Precision MFLOP/s
+  ICACHE	Instruction cache miss rate/ratio
+      L2	L2 cache bandwidth in MBytes/s (experimental)
+      L3	L3 cache bandwidth in MBytes/s
+     MEM	Main memory bandwidth in MBytes/s (experimental)
+  MEM_DP	Main memory bandwidth in MBytes/s (experimental)
+  MEM_SP	Main memory bandwidth in MBytes/s (experimental)
+    NUMA	Local and remote memory accesses (experimental)
+     TLB	TLB miss rate/ratio

@@ -1,0 +1,550 @@
+====
+Starting job 12199870 at Wed Oct 21 23:43:01 BST 2026 for user user.
+Running on nodes: gc003
+====
+module is a function
+module () 
+{ 
+    unset _mlre _mlIFS _mlshdbg;
+    if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then
+        case "$-" in 
+            *v*x*)
+                set +vx;
+                _mlshdbg='vx'
+            ;;
+            *v*)
+                set +v;
+                _mlshdbg='v'
+            ;;
+            *x*)
+                set +x;
+                _mlshdbg='x'
+            ;;
+            *)
+                _mlshdbg=''
+            ;;
+        esac;
+    fi;
+    if [ -n "${IFS+x}" ]; then
+        _mlIFS=$IFS;
+    fi;
+    IFS=' ';
+    for _mlv in ${MODULES_RUN_QUARANTINE:-};
+    do
+        if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then
+            if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then
+                _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";
+            fi;
+            _mlrv="MODULES_RUNENV_${_mlv}";
+            _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";
+        fi;
+    done;
+    if [ -n "${_mlre:-}" ]; then
+        eval `eval ${_mlre}/usr/bin/tclsh /cosma/local/Modules/default/libexec/modulecmd.tcl bash '"$@"'`;
+    else
+        eval `/usr/bin/tclsh /cosma/local/Modules/default/libexec/modulecmd.tcl bash "$@"`;
+    fi;
+    _mlstatus=$?;
+    if [ -n "${_mlIFS+x}" ]; then
+        IFS=$_mlIFS;
+    else
+        unset IFS;
+    fi;
+    if [ -n "${_mlshdbg:-}" ]; then
+        set -$_mlshdbg;
+    fi;
+    unset _mlre _mlv _mlrv _mlIFS _mlshdbg;
+    return $_mlstatus
+}
++ unset _mlre _mlIFS _mlshdbg
++ '[' 0 = 1 ']'
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ for _mlv in ${MODULES_RUN_QUARANTINE:-}
++ '[' LD_LIBRARY_PATH = LD_LIBRARY_PATH -a LD_LIBRARY_PATH = LD_LIBRARY_PATH ']'
+++ eval 'echo ${LD_LIBRARY_PATH+x}'
++++ echo
++ '[' -n '' ']'
++ _mlrv=MODULES_RUNENV_LD_LIBRARY_PATH
+++ eval 'echo ${MODULES_RUNENV_LD_LIBRARY_PATH:-}'
++++ echo
++ _mlre='LD_LIBRARY_PATH='\'''\'' '
++ for _mlv in ${MODULES_RUN_QUARANTINE:-}
++ '[' LD_PRELOAD = LD_PRELOAD -a LD_PRELOAD = LD_PRELOAD ']'
+++ eval 'echo ${LD_PRELOAD+x}'
++++ echo
++ '[' -n '' ']'
++ _mlrv=MODULES_RUNENV_LD_PRELOAD
+++ eval 'echo ${MODULES_RUNENV_LD_PRELOAD:-}'
++++ echo
++ _mlre='LD_LIBRARY_PATH='\'''\'' LD_PRELOAD='\'''\'' '
++ '[' -n 'LD_LIBRARY_PATH='\'''\'' LD_PRELOAD='\'''\'' ' ']'
+++ eval 'LD_LIBRARY_PATH='\'''\''' 'LD_PRELOAD='\'''\''' /usr/bin/tclsh /cosma/local/Modules/default/libexec/modulecmd.tcl bash '"$@"'
++++ LD_LIBRARY_PATH=
++++ LD_PRELOAD=
++++ /usr/bin/tclsh /cosma/local/Modules/default/libexec/modulecmd.tcl bash list
+Currently Loaded Modulefiles:
+ 1) cosma/2024(default)   2) gnu_comp/14.1.0(default)   3) likwid/5.5.1  
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ '[' -n '' ']'
++ unset _mlre _mlv _mlrv _mlIFS _mlshdbg
++ return 0
++ '[' LD_LIBRARY_PATH = LD_LIBRARY_PATH -a LD_LIBRARY_PATH = LD_LIBRARY_PATH ']'
+++ eval 'echo ${LD_LIBRARY_PATH+x}'
++ _mlrv=MODULES_RUNENV_LD_LIBRARY_PATH
+++ eval 'echo ${MODULES_RUNENV_LD_LIBRARY_PATH:-}'
++ _mlre='LD_LIBRARY_PATH='\'''\'' '
++ _mlre='LD_LIBRARY_PATH='\'''\'' LD_PRELOAD='\'''\'' '
++ '[' -n 'LD_LIBRARY_PATH='\'''\'' LD_PRELOAD='\'''\'' ' ']'
+++ eval 'LD_LIBRARY_PATH='\'''\''' 'LD_PRELOAD='\'''\''' /usr/bin/tclsh /cosma/local/Modules/default/libexec/modulecmd.tcl bash '"$@"'
++++ LD_LIBRARY_PATH=
+prepend-path	PATH /cosma/local/likwid/gnu_14.1.0/5.5.1/sbin
+prepend-path	PATH /cosma/local/likwid/gnu_14.1.0/5.5.1/bin
+prepend-path	PKG_CONFIG_PATH /cosma/local/likwid/gnu_14.1.0/5.5.1/lib/pkgconfig
+prepend-path	LD_RUN_PATH /cosma/local/likwid/gnu_14.1.0/5.5.1/lib
+prepend-path	CMAKE_LIBRARY_PATH /cosma/local/likwid/gnu_14.1.0/5.5.1/lib
+prepend-path	LIBRARY_PATH /cosma/local/likwid/gnu_14.1.0/5.5.1/lib
+prepend-path	CMAKE_INCLUDE_PATH /cosma/local/likwid/gnu_14.1.0/5.5.1/include
+prepend-path	CPATH /cosma/local/likwid/gnu_14.1.0/5.5.1/include
+prepend-path	MANPATH /cosma/local/likwid/gnu_14.1.0/5.5.1/bin
+prepend-path	CMAKE_MODULE_PATH /cosma/local/likwid/gnu_14.1.0/5.5.1/share/likwid
+gc003.pri.cosma.local
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           46 bits physical, 57 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  128
+On-line CPU(s) list:                     0-127
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Xeon(R) Gold 6430
+CPU family:                              6
+Model:                                   143
+Thread(s) per core:                      2
+Core(s) per socket:                      32
+Socket(s):                               2
+Stepping:                                8
+CPU(s) scaling MHz:                      32%
+CPU max MHz:                             3400.0000
+CPU min MHz:                             800.0000
+BogoMIPS:                                4200.00
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect user_shstk avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req vnmi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr ibt amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities
+Virtualization:                          VT-x
+L1d cache:                               3 MiB (64 instances)
+L1i cache:                               2 MiB (64 instances)
+L2 cache:                                128 MiB (64 instances)
+L3 cache:                                120 MiB (2 instances)
+NUMA node(s):                            2
+NUMA node0 CPU(s):                       0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,96,98,100,102,104,106,108,110,112,114,116,118,120,122,124,126
+NUMA node1 CPU(s):                       1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89,91,93,95,97,99,101,103,105,107,109,111,113,115,117,119,121,123,125,127
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Vulnerable
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace
+    128 amx_tile
+    128 avx2
+    128 avx512f
+    128 fma
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Gold 6430
+CPU type:	Intel SapphireRapids processor
+CPU stepping:	8
+********************************************************************************
+Hardware Thread Topology
+********************************************************************************
+Sockets:		2
+CPU dies:		2
+Cores per socket:	32
+Threads per core:	2
+--------------------------------------------------------------------------------
+HWThread        Thread        Core        Die        Socket        Available
+0               0             0           0          0             *                
+1               0             32          0          1             *                
+2               0             1           0          0             *                
+3               0             33          0          1             *                
+4               0             2           0          0             *                
+5               0             34          0          1             *                
+6               0             3           0          0             *                
+7               0             35          0          1             *                
+8               0             4           0          0             *                
+9               0             36          0          1             *                
+10              0             5           0          0             *                
+11              0             37          0          1             *                
+12              0             6           0          0             *                
+13              0             38          0          1             *                
+14              0             7           0          0             *                
+15              0             39          0          1             *                
+16              0             8           0          0             *                
+17              0             40          0          1             *                
+18              0             9           0          0             *                
+19              0             41          0          1             *                
+20              0             10          0          0             *                
+21              0             42          0          1             *                
+22              0             11          0          0             *                
+23              0             43          0          1             *                
+24              0             12          0          0             *                
+25              0             44          0          1             *                
+26              0             13          0          0             *                
+27              0             45          0          1             *                
+28              0             14          0          0             *                
+29              0             46          0          1             *                
+30              0             15          0          0             *                
+31              0             47          0          1             *                
+32              0             16          0          0             *                
+33              0             48          0          1             *                
+34              0             17          0          0             *                
+35              0             49          0          1             *                
+36              0             18          0          0             *                
+37              0             50          0          1             *                
+38              0             19          0          0             *                
+39              0             51          0          1             *                
+40              0             20          0          0             *                
+41              0             52          0          1             *                
+42              0             21          0          0             *                
+43              0             53          0          1             *                
+44              0             22          0          0             *                
+45              0             54          0          1             *                
+46              0             23          0          0             *                
+47              0             55          0          1             *                
+48              0             24          0          0             *                
+49              0             56          0          1             *                
+50              0             25          0          0             *                
+51              0             57          0          1             *                
+52              0             26          0          0             *                
+53              0             58          0          1             *                
+54              0             27          0          0             *                
+55              0             59          0          1             *                
+56              0             28          0          0             *                
+57              0             60          0          1             *                
+58              0             29          0          0             *                
+59              0             61          0          1             *                
+60              0             30          0          0             *                
+61              0             62          0          1             *                
+62              0             31          0          0             *                
+63              0             63          0          1             *                
+64              1             0           0          0             *                
+65              1             32          0          1             *                
+66              1             1           0          0             *                
+67              1             33          0          1             *                
+68              1             2           0          0             *                
+69              1             34          0          1             *                
+70              1             3           0          0             *                
+71              1             35          0          1             *                
+72              1             4           0          0             *                
+73              1             36          0          1             *                
+74              1             5           0          0             *                
+75              1             37          0          1             *                
+76              1             6           0          0             *                
+77              1             38          0          1             *                
+78              1             7           0          0             *                
+79              1             39          0          1             *                
+80              1             8           0          0             *                
+81              1             40          0          1             *                
+82              1             9           0          0             *                
+83              1             41          0          1             *                
+84              1             10          0          0             *                
+85              1             42          0          1             *                
+86              1             11          0          0             *                
+87              1             43          0          1             *                
+88              1             12          0          0             *                
+89              1             44          0          1             *                
+90              1             13          0          0             *                
+91              1             45          0          1             *                
+92              1             14          0          0             *                
+93              1             46          0          1             *                
+94              1             15          0          0             *                
+95              1             47          0          1             *                
+96              1             16          0          0             *                
+97              1             48          0          1             *                
+98              1             17          0          0             *                
+99              1             49          0          1             *                
+100             1             18          0          0             *                
+101             1             50          0          1             *                
+102             1             19          0          0             *                
+103             1             51          0          1             *                
+104             1             20          0          0             *                
+105             1             52          0          1             *                
+106             1             21          0          0             *                
+107             1             53          0          1             *                
+108             1             22          0          0             *                
+109             1             54          0          1             *                
+110             1             23          0          0             *                
+111             1             55          0          1             *                
+112             1             24          0          0             *                
+113             1             56          0          1             *                
+114             1             25          0          0             *                
+115             1             57          0          1             *                
+116             1             26          0          0             *                
+117             1             58          0          1             *                
+118             1             27          0          0             *                
+119             1             59          0          1             *                
+120             1             28          0          0             *                
+121             1             60          0          1             *                
+122             1             29          0          0             *                
+123             1             61          0          1             *                
+124             1             30          0          0             *                
+125             1             62          0          1             *                
+126             1             31          0          0             *                
+127             1             63          0          1             *                
+--------------------------------------------------------------------------------
+Socket 0:		( 0 64 2 66 4 68 6 70 8 72 10 74 12 76 14 78 16 80 18 82 20 84 22 86 24 88 26 90 28 92 30 94 32 96 34 98 36 100 38 102 40 104 42 106 44 108 46 110 48 112 50 114 52 116 54 118 56 120 58 122 60 124 62 126 )
+Socket 1:		( 1 65 3 67 5 69 7 71 9 73 11 75 13 77 15 79 17 81 19 83 21 85 23 87 25 89 27 91 29 93 31 95 33 97 35 99 37 101 39 103 41 105 43 107 45 109 47 111 49 113 51 115 53 117 55 119 57 121 59 123 61 125 63 127 )
+--------------------------------------------------------------------------------
+********************************************************************************
+Cache Topology
+********************************************************************************
+Level:			1
+Size:			48 kB
+Type:			Data cache
+Associativity:		12
+Number of sets:		64
+Cache line size:	64
+Cache type:		Non Inclusive
+Shared by threads:	2
+Cache groups:		( 0 64 ) ( 2 66 ) ( 4 68 ) ( 6 70 ) ( 8 72 ) ( 10 74 ) ( 12 76 ) ( 14 78 ) ( 16 80 ) ( 18 82 ) ( 20 84 ) ( 22 86 ) ( 24 88 ) ( 26 90 ) ( 28 92 ) ( 30 94 ) ( 32 96 ) ( 34 98 ) ( 36 100 ) ( 38 102 ) ( 40 104 ) ( 42 106 ) ( 44 108 ) ( 46 110 ) ( 48 112 ) ( 50 114 ) ( 52 116 ) ( 54 118 ) ( 56 120 ) ( 58 122 ) ( 60 124 ) ( 62 126 ) ( 1 65 ) ( 3 67 ) ( 5 69 ) ( 7 71 ) ( 9 73 ) ( 11 75 ) ( 13 77 ) ( 15 79 ) ( 17 81 ) ( 19 83 ) ( 21 85 ) ( 23 87 ) ( 25 89 ) ( 27 91 ) ( 29 93 ) ( 31 95 ) ( 33 97 ) ( 35 99 ) ( 37 101 ) ( 39 103 ) ( 41 105 ) ( 43 107 ) ( 45 109 ) ( 47 111 ) ( 49 113 ) ( 51 115 ) ( 53 117 ) ( 55 119 ) ( 57 121 ) ( 59 123 ) ( 61 125 ) ( 63 127 )
+--------------------------------------------------------------------------------
+Level:			2
+Size:			2 MB
+Type:			Unified cache
+Associativity:		16
+Number of sets:		2048
+Cache line size:	64
+Cache type:		Non Inclusive
+Shared by threads:	2
+Cache groups:		( 0 64 ) ( 2 66 ) ( 4 68 ) ( 6 70 ) ( 8 72 ) ( 10 74 ) ( 12 76 ) ( 14 78 ) ( 16 80 ) ( 18 82 ) ( 20 84 ) ( 22 86 ) ( 24 88 ) ( 26 90 ) ( 28 92 ) ( 30 94 ) ( 32 96 ) ( 34 98 ) ( 36 100 ) ( 38 102 ) ( 40 104 ) ( 42 106 ) ( 44 108 ) ( 46 110 ) ( 48 112 ) ( 50 114 ) ( 52 116 ) ( 54 118 ) ( 56 120 ) ( 58 122 ) ( 60 124 ) ( 62 126 ) ( 1 65 ) ( 3 67 ) ( 5 69 ) ( 7 71 ) ( 9 73 ) ( 11 75 ) ( 13 77 ) ( 15 79 ) ( 17 81 ) ( 19 83 ) ( 21 85 ) ( 23 87 ) ( 25 89 ) ( 27 91 ) ( 29 93 ) ( 31 95 ) ( 33 97 ) ( 35 99 ) ( 37 101 ) ( 39 103 ) ( 41 105 ) ( 43 107 ) ( 45 109 ) ( 47 111 ) ( 49 113 ) ( 51 115 ) ( 53 117 ) ( 55 119 ) ( 57 121 ) ( 59 123 ) ( 61 125 ) ( 63 127 )
+--------------------------------------------------------------------------------
+Level:			3
+Size:			60 MB
+Type:			Unified cache
+Associativity:		15
+Number of sets:		65536
+Cache line size:	64
+Cache type:		Non Inclusive
+Shared by threads:	64
+Cache groups:		( 0 64 2 66 4 68 6 70 8 72 10 74 12 76 14 78 16 80 18 82 20 84 22 86 24 88 26 90 28 92 30 94 32 96 34 98 36 100 38 102 40 104 42 106 44 108 46 110 48 112 50 114 52 116 54 118 56 120 58 122 60 124 62 126 ) ( 1 65 3 67 5 69 7 71 9 73 11 75 13 77 15 79 17 81 19 83 21 85 23 87 25 89 27 91 29 93 31 95 33 97 35 99 37 101 39 103 41 105 43 107 45 109 47 111 49 113 51 115 53 117 55 119 57 121 59 123 61 125 63 127 )
+--------------------------------------------------------------------------------
+********************************************************************************
+NUMA Topology
+********************************************************************************
+NUMA domains:		2
+--------------------------------------------------------------------------------
+Domain:			0
+Processors:		( 0 64 2 66 4 68 6 70 8 72 10 74 12 76 14 78 16 80 18 82 20 84 22 86 24 88 26 90 28 92 30 94 32 96 34 98 36 100 38 102 40 104 42 106 44 108 46 110 48 112 50 114 52 116 54 118 56 120 58 122 60 124 62 126 )
+Distances:		10 21
+Free memory:		1.02746e+06 MB
+Total memory:		1.03094e+06 MB
+--------------------------------------------------------------------------------
+Domain:			1
+Processors:		( 1 65 3 67 5 69 7 71 9 73 11 75 13 77 15 79 17 81 19 83 21 85 23 87 25 89 27 91 29 93 31 95 33 97 35 99 37 101 39 103 41 105 43 107 45 109 47 111 49 113 51 115 53 117 55 119 57 121 59 123 61 125 63 127 )
+Distances:		21 10
+Free memory:		1.0287e+06 MB
+Total memory:		1.03217e+06 MB
+--------------------------------------------------------------------------------
+
+
+********************************************************************************
+Graphical Topology
+********************************************************************************
+Socket 0:
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| |  0 64   | |  2 66   | |  4 68   | |  6 70   | |  8 72   | |  10 74  | |  12 76  | |  14 78  | |  16 80  | |  18 82  | |  20 84  | |  22 86  | |  24 88  | |  26 90  | |  28 92  | |  30 94  | |  32 96  | |  34 98  | | 36 100  | | 38 102  | | 40 104  | | 42 106  | | 44 108  | | 46 110  | | 48 112  | | 50 114  | | 52 116  | | 54 118  | | 56 120  | | 58 122  | | 60 124  | | 62 126  | |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
+| |                                                                                                                                                                                            60 MB                                                                                                                                                                                            | |
+| +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Socket 1:
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| |  1 65   | |  3 67   | |  5 69   | |  7 71   | |  9 73   | |  11 75  | |  13 77  | |  15 79  | |  17 81  | |  19 83  | |  21 85  | |  23 87  | |  25 89  | |  27 91  | |  29 93  | |  31 95  | |  33 97  | |  35 99  | | 37 101  | | 39 103  | | 41 105  | | 43 107  | | 45 109  | | 47 111  | | 49 113  | | 51 115  | | 53 117  | | 55 119  | | 57 121  | | 59 123  | | 61 125  | | 63 127  | |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |  48 kB  | |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |   2 MB  | |
+| +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ +---------+ |
+| +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
+| |                                                                                                                                                                                            60 MB                                                                                                                                                                                            | |
+| +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+CPU CORE SOCKET NODE
+  0    0      0    0
+  1    1      1    1
+  2    2      0    0
+  3    3      1    1
+performance
+3388594
+available: 2 nodes (0-1)
+node 0 cpus: 0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98 100 102 104 106 108 110 112 114 116 118 120 122 124 126
+node 0 size: 1030940 MB
+node 0 free: 1027464 MB
+node 1 cpus: 1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63 65 67 69 71 73 75 77 79 81 83 85 87 89 91 93 95 97 99 101 103 105 107 109 111 113 115 117 119 121 123 125 127
+node 1 size: 1032169 MB
+node 1 free: 1028701 MB
+node distances:
+node     0    1 
+   0:   10   21 
+   1:   21   10 
+copy_avx - Double-precision vector copy, optimized for AVX
+copy_avx512 - Double-precision vector copy, optimized for AVX-512
+copy_mem - Double-precision vector copy, only scalar operations but with non-temporal stores
+copy_mem_avx - Double-precision vector copy, uses AVX and non-temporal stores
+copy_mem_avx512 - Double-precision vector copy, uses AVX-512 and non-temporal stores
+copy_mem_sse - Double-precision vector copy, uses SSE and non-temporal stores
+copy_sse - Double-precision vector copy, optimized for SSE
+daxpy_mem_avx - Double-precision linear combination of two vectors, optimized for AVX and non-temporal stores (Just for architectural research)
+daxpy_mem_avx512 - Double-precision linear combination of two vectors, optimized for AVX-512 and non-temporal stores
+daxpy_mem_avx512_fma - Double-precision linear combination of two vectors, optimized for AVX-512 FMAs and non-temporal stores (Just for architectural research)
+daxpy_mem_avx_fma - Double-precision linear combination of two vectors, optimized for AVX FMAs and non-temporal stores (Just for architectural research)
+daxpy_mem_sse - Double-precision linear combination of two vectors, optimized for SSE and non-temporal stores (Just for architectural research)
+daxpy_mem_sse_fma - Double-precision linear combination of two vectors, optimized for SSE FMAs and non temporal stores (Just for architectural research)
+daxpy_sp_mem_avx - Single-precision linear combination of two vectors, optimized for AVX and non-temporal stores (Just for architectural research)
+daxpy_sp_mem_avx512 - Single-precision linear combination of two vectors, optimized for AVX-512 and non-temporal stores (Just for architectural research)
+daxpy_sp_mem_avx512_fma - Single-precision linear combination of two vectors, optimized for AVX-512 FMAs and non-temporal stores (Just for architectural research)
+daxpy_sp_mem_avx_fma - Single-precision linear combination of two vectors, optimized for AVX FMAs and non-temporal stores (Just for architectural research)
+daxpy_sp_mem_sse - Single-precision linear combination of two vectors, optimized for SSE and non-temporal stores (Just for architectural research)
+daxpy_sp_mem_sse_fma - Single-precision linear combination of two vectors, optimized for SSE FMAs and non-temporal stores (Just for architectural research)
+load_avx - Double-precision load, optimized for AVX
+load_avx512 - Double-precision load, optimized for AVX-512
+load_mem - Double-precision load, using non-temporal loads
+load_sse - Double-precision load, optimized for SSE
+peakflops - Double-precision multiplications and additions with a single load, only scalar operations
+peakflops_amd_zen_avx512_fma_add - Double-precision FMA and ADD with a single load. Designed for architectures that can perform AVX-512 FMA and AVX ADD simultaneously.
+peakflops_amd_zen_avx_fma_add - Double-precision FMA and ADD with a single load. Designed for architectures that can perform AVX2 FMA and AVX ADD simultaneously.
+peakflops_avx - Double-precision multiplications and additions with a single load, optimized for AVX
+peakflops_avx512 - Double-precision multiplications and additions with a single load, optimized for AVX-512
+peakflops_avx512_fma - Double-precision multiplications and additions with a single load, optimized for AVX-512 FMAs
+peakflops_avx_fma - Double-precision multiplications and additions with a single load, optimized for AVX FMAs
+peakflops_sp - Single-precision multiplications and additions with a single load, only scalar operations
+peakflops_sp_avx - Single-precision multiplications and additions with a single load, optimized for AVX
+peakflops_sp_avx512 - Single-precision multiplications and additions with a single load, optimized for AVX-512
+peakflops_sp_avx512_fma - Single-precision multiplications and additions with a single load, optimized for AVX-512 FMAs
+peakflops_sp_avx_fma - Single-precision multiplications and additions with a single load, optimized for AVX FMAs
+peakflops_sp_sse - Single-precision multiplications and additions with a single load, optimised for SSE
+peakflops_sse - Double-precision multiplications and additions with a single load, optimised for SSE
+store_mem_avx - Double-precision store, uses AVX and non-temporal stores
+store_mem_avx512 - Double-precision store, uses AVX-512 and non-temporal stores
+store_mem_sse - Double-precision store, uses SSE and non-temporal stores
+stream_avx - Double-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX
+stream_avx512 - Double-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX-512
+stream_avx512_fma - Double-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX-512 FMAs
+stream_avx_fma - Double-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX FMAs
+stream_mem - Double-precision stream triad A(i) = B(i)*c + C(i), uses scalar arithmetic and SSE non-temporal stores
+stream_mem_avx - Double-precision stream triad A(i) = B(i)*c + C(i), uses AVX and non-temporal stores
+stream_mem_avx512 - Double-precision stream triad A(i) = B(i)*c + C(i), uses AVX-512 and non-temporal stores
+stream_mem_avx_fma - Double-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX FMAs and non-temporal stores
+stream_mem_sse - Double-precision stream triad A(i) = B(i)*c + C(i), uses SSE and non-temporal stores
+stream_mem_sse_fma - Double-precision stream triad A(i) = B(i)*c + C(i), uses SSE FMAs and non-temporal stores
+stream_sp - Single-precision stream triad A(i) = B(i)*c + C(i), only scalar operations
+stream_sp_avx - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX
+stream_sp_avx512 - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX-512
+stream_sp_avx512_fma - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX-512 FMAs
+stream_sp_avx_fma - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX FMAs
+stream_sp_mem - Single-precision stream triad A(i) = B(i)*c + C(i), uses scalar arithmetic and SSE non-temporal stores
+stream_sp_mem_avx - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX and non-temporal stores
+stream_sp_mem_avx512 - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX-512 and non-temporal stores
+stream_sp_mem_avx512_fma - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX-512 FMAs and non-temporal stores
+stream_sp_mem_avx_fma - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for AVX FMAs and non-temporal stores
+stream_sp_mem_sse - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for SSE and non-temporal stores
+stream_sp_mem_sse_fma - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for SSE FMAs and non-temporal stores
+stream_sp_sse - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for SSE
+stream_sp_sse_fma - Single-precision stream triad A(i) = B(i)*c + C(i), optimized for SSE FMAs
+stream_sse - Double-precision stream triad A(i) = B(i)*c + C(i), optimized for SSE
+stream_sse_fma - Double-precision stream triad A(i) = B(i)*c + C(i), optimized for SSE FMAs
+triad_avx - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX
+triad_avx512 - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX-512
+triad_avx512_fma - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX-512 FMAs
+triad_avx_fma - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX FMAs
+triad_mem_avx - Double-precision triad A(i) = B(i) * C(i) + D(i), uses AVX and non-temporal stores
+triad_mem_avx512 - Double-precision triad A(i) = B(i) * C(i) + D(i), uses AVX-512 and non-temporal stores
+triad_mem_avx512_fma - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX-512 FMAs and non-temporal stores
+triad_mem_avx_fma - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX FMAs and non-temporal stores
+triad_mem_sse - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for SSE and non-temporal stores
+triad_mem_sse_fma - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for SSE FMAs and non-temporal stores
+triad_sp - Single-precision triad A(i) = B(i) * C(i) + D(i), only scalar operations
+triad_sp_avx - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX
+triad_sp_avx512 - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX-512
+triad_sp_avx512_fma - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX-512 FMAs
+triad_sp_avx_fma - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX FMAs
+triad_sp_mem_avx - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX and non-temporal stores
+triad_sp_mem_avx512 - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX-512 and non-temporal stores
+triad_sp_mem_avx512_fma - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX-512 FMAs and non-temporal stores
+triad_sp_mem_avx_fma - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for AVX FMAs and non-temporal stores
+triad_sp_mem_sse - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for SSE and non-temporal stores
+triad_sp_mem_sse_fma - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for SSE FMAs and non-temporal stores
+triad_sp_sse - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for SSE
+triad_sp_sse_fma - Single-precision triad A(i) = B(i) * C(i) + D(i), optimized for SSE FMAs
+triad_sse - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for SSE
+triad_sse_fma - Double-precision triad A(i) = B(i) * C(i) + D(i), optimized for SSE FMAs
+    CLOCK	Power and Energy consumption
+FLOPS_AVX	Packed AVX MFLOP/s
+ FLOPS_DP	Double Precision MFLOP/s
+ FLOPS_HP	Half Precision MFLOP/s
+ FLOPS_SP	Single Precision MFLOP/s
+      MEM	Memory bandwidth in MBytes/s
+   MEM_DP	Overview of DP arithmetic and main memory performance
+   MEM_HP	Overview of HP arithmetic and main memory performance
+   MEM_SP	Overview of SP arithmetic and main memory performance
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Gold 6430
+CPU type:	Intel SapphireRapids processor
+CPU clock:	2.10 GHz
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Group 1: CLOCK
++-----------------------+---------+------------+
+|         Event         | Counter | HWThread 0 |
++-----------------------+---------+------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  |     635950 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  |    1571823 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  |     976416 |
+|     TOPDOWN_SLOTS     |  FIXC3  |    9430938 |
+|     M2M_CLOCKTICKS    |  M2MC0  |      -     |
+|     PWR_PKG_ENERGY    |   PWR0  |   132.9614 |
++-----------------------+---------+------------+
+
++----------------------+------------+
+|        Metric        | HWThread 0 |
++----------------------+------------+
+|  Runtime (RDTSC) [s] |     1.0024 |
+| Runtime unhalted [s] |     0.0007 |
+|      Clock [MHz]     |  3380.5553 |
+|          CPI         |     2.4716 |
+|  Uncore Clock [MHz]  |          0 |
+|      Energy [J]      |   132.9614 |
+|       Power [W]      |   132.6421 |
++----------------------+------------+
+
+perfctr exit: 0
+-rwsr-xr-x 1 root root 259648 Mar 30  2026 /cosma/local/likwid/gnu_14.1.0/5.5.1/sbin/likwid-accessD
+crw------- 1 root root 202, 0 Oct 21 15:19 /dev/cpu/0/msr
+1
+/cosma/local/gcc/14.1.0/bin/gcc
+/usr/bin/python3

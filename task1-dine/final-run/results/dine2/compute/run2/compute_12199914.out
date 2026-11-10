@@ -1,0 +1,21 @@
+====
+Starting job 12199914 at Thu Oct 22 00:01:44 BST 2026 for user user.
+Running on nodes: gc008
+====
+NOTE: SMT is on (2 threads/core); benchmarks use 64 threads, one per physical core
+CPU: Intel(R) Xeon(R) Gold 6430, 2 sockets x 32 cores, 2 threads/core
+pinning: -W S0:...:32:1:2 -> hwthreads [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62], one per physical core
+peakflops_avx512_fma     S0:16kB:1        median=    104698.8 min=104496.2 max=104959.9
+peakflops_avx512_fma     S0:32kB:2        median=    208746.3 min=181659.3 max=208896.2
+peakflops_avx512_fma     S0:64kB:4        median=    417595.1 min=357463.7 max=417721.0
+peakflops_avx512_fma     S0:128kB:8       median=    832690.7 min=714206.9 max=834962.6
+peakflops_avx512_fma     S0:256kB:16      median=   1544241.0 min=1364744.4 max=1569441.8
+peakflops_avx512_fma     S0:512kB:32      median=   2326532.3 min=2250045.8 max=2326718.5
+peakflops_avx512_fma     N:1024kB:64      median=   4650105.5 min=4452609.6 max=4652548.8
+peakflops_sp_avx512_fma  S0:16kB:1        median=    209306.9 min=208008.5 max=209435.5
+peakflops_sp_avx512_fma  S0:32kB:2        median=    411846.8 min=371170.7 max=416430.6
+peakflops_sp_avx512_fma  S0:64kB:4        median=    810404.1 min=729860.2 max=835448.3
+peakflops_sp_avx512_fma  S0:128kB:8       median=   1635800.5 min=1461937.0 max=1646672.8
+peakflops_sp_avx512_fma  S0:256kB:16      median=   2976242.4 min=2698442.6 max=3048636.8
+peakflops_sp_avx512_fma  S0:512kB:32      median=   4652813.5 min=4523399.0 max=4657748.6
+peakflops_sp_avx512_fma  N:1024kB:64      median=   9293242.5 min=8797842.4 max=9302528.5

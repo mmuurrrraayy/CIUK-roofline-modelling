@@ -1,0 +1,35 @@
+{
+  "arch": "zen2",
+  "config": {
+    "cores": 32,
+    "per_socket": 16,
+    "isa": "avx",
+    "peak_dp": "peakflops_avx_fma",
+    "peak_sp": "peakflops_sp_avx_fma",
+    "bw_suffix": "avx",
+    "dram_node": "4GB",
+    "dram_socket": "2GB",
+    "cache_sizes": [
+      "256kB",
+      "512kB",
+      "1MB",
+      "4MB",
+      "8MB",
+      "16MB",
+      "32MB",
+      "64MB",
+      "128MB",
+      "256MB",
+      "512MB",
+      "1GB",
+      "4GB"
+    ],
+    "pin": ":1:2"
+  },
+  "suite": "memory",
+  "reps": 5,
+  "cpu": "AMD EPYC 7302 16-Core Processor",
+  "date": "2026-10-22T23:40:24.345593",
+  "host": "b105.pri.cosma.local",
+  "likwid": "likwid-perfctr -- Version 5.5.1 (commit: 0123456789)"
+}
